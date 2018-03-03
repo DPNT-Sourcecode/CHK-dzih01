@@ -5,7 +5,8 @@ from lib.solutions.hello import hello
 
 class TestHello(unittest.TestCase):
     def test_hello(self):
-        assert hello("lalala") == "Hello, World!"
+        friend_name = "Pepe"
+        assert hello(friend_name) == "Hello, " + friend_name + "!"
 
 
 if __name__ == '__main__':
