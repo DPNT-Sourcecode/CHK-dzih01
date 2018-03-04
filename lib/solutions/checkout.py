@@ -12,7 +12,7 @@ def checkout(skus):
     total = 0
 
     if not skus:
-        return -1
+        return total
 
     for sku in skus:
         if sku in prices:

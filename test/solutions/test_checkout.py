@@ -11,12 +11,12 @@ class TestCheckout(unittest.TestCase):
 
 class TestCheckoutEmpty(unittest.TestCase):
     def test_checkout(self):
-        assert checkout("") == -1
+        assert checkout("") == 0
 
 
 class TestCheckoutNone(unittest.TestCase):
     def test_checkout(self):
-        assert checkout(None) == -1
+        assert checkout(None) == 0
 
 
 class TestCheckoutOneSKU(unittest.TestCase):
