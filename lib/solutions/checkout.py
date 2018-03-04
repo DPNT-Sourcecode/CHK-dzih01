@@ -11,8 +11,6 @@ def checkout(skus):
     ticket = {}
     total = 0
 
-    print repr(skus) 
-
     if skus is None:
         return -1
 
@@ -21,13 +19,15 @@ def checkout(skus):
             ticket[sku] = ticket.get(sku, 0) + 1
         else:
             return -1
-    
-    print repr(ticket) 
 
     for sku in ticket:
+        print sku + " - " + repr(ticket[sku])
         for offer in sorted(prices[sku], reverse=True):
+            print repr(ticket[sku]) + " / " + repr(prices[sku][offer])
             times = ticket[sku] / prices[sku][offer]
+            print repr(times)
             total += times * offer
+            print repr(offer)
             ticket[sku] -= times * offer
     
     return total
