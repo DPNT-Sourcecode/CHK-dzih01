@@ -50,5 +50,10 @@ class TestCheckoutOffer3(unittest.TestCase):
         assert checkout("BBCB") == 95
 
 
+class TestCheckoutOfferHalfPrice(unittest.TestCase):
+    def test_checkout(self):
+        assert checkout("EE") == 20
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -1,9 +1,9 @@
 
-prices = {'A': {1: 50, 3: 130},
+prices = {'A': {1: 50, 3: 130, 5: 200},
           'B': {1: 30, 2: 45},
           'C': {1: 20},
-          'D': {1: 15}}
-
+          'D': {1: 15},
+          'E': {1: 40, 2: 0.5}}
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -26,3 +26,7 @@ def checkout(skus):
             total += times * prices[sku][offer]
             ticket[sku] -= times * offer
     return total
+
+
+if __name__ == '__main__':
+    print checkout('EE')
