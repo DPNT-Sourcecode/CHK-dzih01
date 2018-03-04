@@ -27,7 +27,7 @@ class TestCheckoutOneSKU(unittest.TestCase):
 
 class TestCheckoutUnknownSKU(unittest.TestCase):
     def test_checkout(self):
-        assert checkout("ACBFA") == -1
+        assert checkout("ACBXA") == -1
 
 
 class TestCheckoutOffer1(unittest.TestCase):
