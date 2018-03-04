@@ -11,7 +11,7 @@ def checkout(skus):
     ticket = {}
     total = 0
 
-    if skus is None:
+    if not skus:
         return -1
 
     for sku in skus:
