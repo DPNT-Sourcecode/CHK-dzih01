@@ -32,4 +32,4 @@ def checkout(skus):
 
 
 if __name__ == "__main__":
-    print repr(checkout('BB'))
+    print repr(checkout('BBCB'))

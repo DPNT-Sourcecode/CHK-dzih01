@@ -19,6 +19,12 @@ class TestCheckoutNone(unittest.TestCase):
         assert checkout(None) == -1
 
 
+class TestCheckoutOneSKU(unittest.TestCase):
+
+    def test_checkout(self):
+        assert checkout("A") == 50
+
+
 class TestCheckoutUnknownSKU(unittest.TestCase):
     def test_checkout(self):
         assert checkout("ACBFA") == -1
@@ -38,9 +44,11 @@ class TestCheckoutOffer3(unittest.TestCase):
     def test_checkout(self):
         assert checkout("BBB") == 75
 
+
 class TestCheckoutOffer3(unittest.TestCase):
     def test_checkout(self):
-        assert checkout("BBCB") == 90
+        assert checkout("BBCB") == 95
+
 
 if __name__ == '__main__':
     unittest.main()
