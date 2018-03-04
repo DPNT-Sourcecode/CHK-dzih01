@@ -29,10 +29,17 @@ def checkout(skus):
                 times = ticket[sku] / offer
                 total += times * offer * prices[sku][1]
                 ticket[sku] -= times * offer
-                if ticket.get('B'):
+                
+                if sku == 'E' and ticket.get('B'):
                     ticket['B'] -= times
                     if ticket['B'] < 0:
                         ticket['B'] = 0
+                
+                if sku == 'F' and ticket.get('F'):
+                    ticket['F'] -= times
+                    if ticket['F'] < 0:
+                        ticket['F'] = 0
+
             else:
                 times = ticket[sku] / offer
                 total += times * prices[sku][offer]

@@ -74,5 +74,16 @@ class TestCheckoutOffer5A(unittest.TestCase):
     def test_checkout(self):
         assert checkout("AAAAA") == 200
 
+
+class TestCheckoutOfferF(unittest.TestCase):
+    def test_checkout(self):
+        assert checkout("FFF") == 20
+
+
+class TestCheckoutOfferF(unittest.TestCase):
+    def test_checkout(self):
+        assert checkout("FF") == 20
+
+
 if __name__ == '__main__':
     unittest.main()
