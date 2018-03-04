@@ -56,21 +56,20 @@ def apply_group_offers(ticket):
             products[sku] = ticket[sku]
             num_products += ticket[sku]
     
-    times = num_products / 3
-
+    times = 3 * (num_products / 3)
     print "products:" + repr(products) + " - " + str(num_products) + " - " + str(times)
 
-    
     while times:
         for sku in sorted(products, reverse=True): #group higher prices first
             if products[sku] >= times:
                 products[sku] -= times 
-                times = 0 
+                to_remove = 0 
             else:
                 products[sku] = 0
                 times -= products[sku]
             
             ticket[sku] = products[sku]
+    
     total = times * GROUP_PRICE
     return total, ticket
 
