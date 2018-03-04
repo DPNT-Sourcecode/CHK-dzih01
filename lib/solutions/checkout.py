@@ -25,6 +25,7 @@ def checkout(skus):
     for sku in ticket:
         for offer in sorted(prices[sku], reverse=True):
             times = ticket[sku] / offer
+            # print "times: " + repr(ticket[sku]) + "/" + repr(offer) + " => " + repr(times)
             total += times * prices[sku][offer]
             ticket[sku] -= times * offer
     return total

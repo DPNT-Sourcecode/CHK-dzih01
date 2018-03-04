@@ -29,12 +29,18 @@ class TestCheckoutOffer1(unittest.TestCase):
         assert checkout("AAA") == 130
 
 
-class TestCheckoutOffer(unittest.TestCase):
+class TestCheckoutOffer2(unittest.TestCase):
     def test_checkout(self):
-        result = checkout("BB")
-        print repr(result)
-        assert checkout("BB") == 90
+        assert checkout("BB") == 45
 
+
+class TestCheckoutOffer3(unittest.TestCase):
+    def test_checkout(self):
+        assert checkout("BBB") == 75
+
+class TestCheckoutOffer3(unittest.TestCase):
+    def test_checkout(self):
+        assert checkout("BBCB") == 90
 
 if __name__ == '__main__':
     unittest.main()
