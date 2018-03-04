@@ -41,7 +41,7 @@ PRICES = {'A': {1: 50, 3: 130, 5: 200},
                            'group_price': 45}}}
 
 
-GROUP_OFFER = ['S', 'T', 'X', 'Y', 'Z']
+GROUP_OFFER = ['Z', 'Y', 'T', 'S', 'X']
 GROUP_PRICE = 45
 
 
@@ -56,16 +56,18 @@ def apply_group_offers(ticket):
 
     times = 3 * (num_products / 3)
     total = GROUP_PRICE * (times / 3)
-    for sku in sorted(products, reverse=True): #group higher prices first
-        if products[sku] >= times:
-            ticket[sku] -= times 
-            times = 0
-            break
-        else:
-            ticket[sku] = 0
-            times -= products[sku]
-            if times == 0:
+
+    for sku in GROUP_OFFER:
+        if products.get(sku):
+            if products[sku] >= times:
+                ticket[sku] -= times 
+                times = 0
                 break
+            else:
+                ticket[sku] = 0
+                times -= products[sku]
+                if times == 0:
+                    break
     return total, ticket
 
 
