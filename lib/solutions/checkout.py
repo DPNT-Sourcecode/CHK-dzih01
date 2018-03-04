@@ -20,6 +20,8 @@ def checkout(skus):
         else:
             return -1
 
+    print repr(ticket)
+
     for sku in ticket:
         for offer in sorted(prices[sku], reverse=True):
             times = ticket[sku] / offer
@@ -29,4 +31,4 @@ def checkout(skus):
 
 
 if __name__ == "__main__":
-    print repr(checkout('AC'))
+    print repr(checkout('BB'))
