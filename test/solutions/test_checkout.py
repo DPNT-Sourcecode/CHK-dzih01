@@ -50,9 +50,14 @@ class TestCheckoutOffer3(unittest.TestCase):
         assert checkout("BBCB") == 95
 
 
-class TestCheckoutOfferHalfPrice(unittest.TestCase):
+class TestCheckoutOfferOneFree(unittest.TestCase):
     def test_checkout(self):
-        assert checkout("EE") == 20
+        assert checkout("EE") == 80
+
+
+class TestCheckoutOfferOneFree1(unittest.TestCase):
+    def test_checkout(self):
+        assert checkout("EEE") == 80
 
 
 class TestCheckoutOffer5A(unittest.TestCase):
