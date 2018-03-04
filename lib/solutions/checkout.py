@@ -11,6 +11,8 @@ def checkout(skus):
     ticket = {}
     total = 0
 
+    print repr(skus) 
+
     if skus is None:
         return -1
 
@@ -20,7 +22,7 @@ def checkout(skus):
         else:
             return -1
     
-    print repr(sku) 
+    print repr(ticket) 
 
     for sku in ticket:
         for offer in sorted(prices[sku], reverse=True):
@@ -30,3 +32,6 @@ def checkout(skus):
     
     return total
 
+
+if __name__ == "__main__":
+    checkout('AC')
