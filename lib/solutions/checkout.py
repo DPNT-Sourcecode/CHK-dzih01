@@ -3,7 +3,8 @@ prices = {'A': {1: 50, 3: 130, 5: 200},
           'B': {1: 30, 2: 45},
           'C': {1: 20},
           'D': {1: 15},
-          'E': {1: 40, 2: 'one_free'}}
+          'E': {1: 40, 2: 'one_free'}
+          'F': {1: 10, 2: 'one_free'}}
 
 # noinspection PyUnusedLocal
 
