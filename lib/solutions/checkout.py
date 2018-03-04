@@ -46,6 +46,8 @@ GROUP_PRICE = 45
 
 
 def apply_group_offers(ticket):
+    print repr(ticket)
+
     products = {}
     num_products = 0
     total = 0
@@ -112,3 +114,7 @@ def checkout(skus):
                 ticket[sku] = 0
 
     return total
+
+
+if __name__ == "__main__":
+    print checkout("SSS")

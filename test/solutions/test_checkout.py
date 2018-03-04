@@ -135,5 +135,19 @@ class TestCheckoutGroupOffer1(unittest.TestCase):
         assert checkout("STXYZS") == 90
 
 
+class TestCheckoutGroupOffer2(unittest.TestCase):
+    def test_checkout(self):
+        assert checkout("SSS") == 45
+
+
+class TestCheckoutGroupOffer3(unittest.TestCase):
+    def test_checkout(self):
+        assert checkout("SSSZ") == 60
+
+
+class TestCheckoutGroupOffer4(unittest.TestCase):
+    def test_checkout(self):
+        assert checkout("ZZZ") == 45
+
 if __name__ == '__main__':
     unittest.main()
