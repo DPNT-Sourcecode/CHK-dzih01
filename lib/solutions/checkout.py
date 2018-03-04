@@ -27,16 +27,14 @@ def checkout(skus):
             if prices[sku][offer] == 'one_free':
                 times = ticket[sku] / offer
                 total += times * offer * prices[sku][1]
-                ticket[sku] -= times * (1 + offer)
+                ticket[sku] -= times * offer
+                ticket['B'] -= times * offer
             else:
                 times = ticket[sku] / offer
                 total += times * prices[sku][offer]
                 ticket[sku] -= times * offer
-            
+
             if ticket[sku] < 0:
                 ticket[sku] = 0
-    
+
     return total
-
-
-
