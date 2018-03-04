@@ -22,11 +22,11 @@ def checkout(skus):
         else:
             return -1
 
-    for sku in ticket:
+    for sku in sorted(ticket, reverse=True):
         for offer in sorted(prices[sku], reverse=True):
             if prices[sku][offer] == 'one_free':
-                print 'one_free'
                 times = ticket[sku] / offer
+                print 'one_free'
                 total += times * offer * prices[sku][1]
                 ticket[sku] -= times * offer
                 if ticket.get('B'):
@@ -44,4 +44,4 @@ def checkout(skus):
     return total
 
 if __name__ == "__main__":
-    print repr(checkout("EE"))
+    print repr(checkout("EEEB"))
