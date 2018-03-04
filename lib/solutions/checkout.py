@@ -32,6 +32,39 @@ PRICES = {'A': {1: 50, 3: 130, 5: 200},
           }
 
 
+PRICES = {'A': {1: 50, 3: 130, 5: 200},
+          'B': {1: 30, 2: 45},
+          'C': {1: 20},
+          'D': {1: 15},
+          'E': {1: 40, 2: {'offer': 'one_free',
+                           'over': 'B'}},
+          'F': {1: 10, 2: {'offer': 'one_free',
+                           'over': 'F'}},
+          'G': {1: 20},
+          'H': {1: 10, 5: 45, 10: 80},
+          'I': {1: 35},
+          'J': {1: 60},
+          'K': {1: 70, 2: 120},
+          'L': {1: 90},
+          'M': {1: 15},
+          'N': {1: 40, 3: {'offer': 'one_free',
+                           'over': 'M'}},
+          'O': {1: 10},
+          'P': {1: 50, 5: 200},
+          'Q': {1: 30, 3: 80},
+          'R': {1: 50, 3: {'offer': 'one_free',
+                           'over': 'Q'}},
+          'S': {1: 20, 3: {'offer': 'buy_any_three',
+                           'over':  ['S', 'T', 'X', 'Y', 'Z'],
+                           'group_price': 45}},
+          'T': {1: 20,    | buy any 3 of (S,T,X,Y,Z) for 45},
+          'U': {1: 40,    | 3U get one U free},
+          'V': {1: 50, 2: 90, 3: 130},
+          'W': {1: 20},
+          'X': {1: 17,    | buy any 3 of (S,T,X,Y,Z) for 45},
+          'Y': {1: 20,    | buy any 3 of (S,T,X,Y,Z) for 45},
+          'Z': {1: 21,    | buy any 3 of (S,T,X,Y,Z) for 45}}
+
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
