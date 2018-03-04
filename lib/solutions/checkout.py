@@ -112,7 +112,3 @@ def checkout(skus):
                 ticket[sku] = 0
 
     return total
-
-
-if __name__ == "__main__":
-    print checkout("STX")
