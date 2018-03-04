@@ -75,22 +75,22 @@ class TestCheckoutOffer5A(unittest.TestCase):
         assert checkout("AAAAA") == 200
 
 
-class TestCheckoutOfferF(unittest.TestCase):
+class TestCheckoutOfferF20(unittest.TestCase):
     def test_checkout(self):
         assert checkout("FFF") == 20
 
 
-class TestCheckoutOfferF(unittest.TestCase):
+class TestCheckoutOfferF2(unittest.TestCase):
     def test_checkout(self):
         assert checkout("FF") == 20
 
 
-class TestCheckoutOfferF(unittest.TestCase):
+class TestCheckoutOfferF4(unittest.TestCase):
     def test_checkout(self):
-        assert checkout("FFFF") == 40
+        assert checkout("FFFF") == 30
 
 
-class TestCheckoutOfferF(unittest.TestCase):
+class TestCheckoutOfferF6(unittest.TestCase):
     def test_checkout(self):
         assert checkout("FFFFFF") == 40
 
