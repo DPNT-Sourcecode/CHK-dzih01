@@ -11,7 +11,7 @@ def checkout(skus):
     ticket = {}
 
     for sku in skus:
-        ticket.setdefault(sku, )
+        ticket[sku] = ticket.get(sku, 0) + 1
 
 
 
