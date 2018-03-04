@@ -124,5 +124,16 @@ class TestCheckoutFullShopFreeM(unittest.TestCase):
     def test_checkout(self):
         assert checkout("V") == 50
 
+
+class TestCheckoutGroupOffer(unittest.TestCase):
+    def test_checkout(self):
+        assert checkout("STX") == 45
+
+
+class TestCheckoutGroupOffer1(unittest.TestCase):
+    def test_checkout(self):
+        assert checkout("STXYZS") == 90
+
+
 if __name__ == '__main__':
     unittest.main()

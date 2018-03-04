@@ -84,7 +84,7 @@ def checkout(skus):
         else:
             return -1
 
-    apply_group_offers(ticket)
+    total, ticket = apply_group_offers(ticket)
 
     for sku in sorted(ticket, reverse=True):
         for offer in sorted(PRICES[sku], reverse=True):
