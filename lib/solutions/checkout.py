@@ -43,8 +43,20 @@ PRICES = {'A': {1: 50, 3: 130, 5: 200},
 
 GROUP_OFFER = ['S', 'T', 'X', 'Y', 'Z']
 
+
 def apply_group_offers(ticket):
-    pass
+    products = {}
+    num_products = 0
+    for sku in GROUP_OFFER:
+        if ticket.get(sku):
+            products[sku] = ticket[sku]
+            num_products += ticket[sku]
+    
+    times = num_products / 3
+
+
+    
+    return total, ticket
 
 
 # noinspection PyUnusedLocal
