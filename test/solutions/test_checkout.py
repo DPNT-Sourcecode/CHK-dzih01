@@ -142,7 +142,7 @@ class TestCheckoutGroupOffer2(unittest.TestCase):
 
 class TestCheckoutGroupOffer3(unittest.TestCase):
     def test_checkout(self):
-        assert checkout("SSSZ") == 60
+        assert checkout("SSSZ") == 65
 
 
 class TestCheckoutGroupOffer4(unittest.TestCase):
