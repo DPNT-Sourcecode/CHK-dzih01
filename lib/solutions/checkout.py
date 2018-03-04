@@ -57,13 +57,23 @@ PRICES = {'A': {1: 50, 3: 130, 5: 200},
           'S': {1: 20, 3: {'offer': 'buy_any_three',
                            'over':  ['S', 'T', 'X', 'Y', 'Z'],
                            'group_price': 45}},
-          'T': {1: 20,    | buy any 3 of (S,T,X,Y,Z) for 45},
-          'U': {1: 40,    | 3U get one U free},
+          'T': {1: 20, 3: {'offer': 'buy_any_three',
+                           'over':  ['S', 'T', 'X', 'Y', 'Z'],
+                           'group_price': 45}},
+          'U': {1: 40, 3: {'offer': 'one_free',
+                           'over': 'U'}},
           'V': {1: 50, 2: 90, 3: 130},
           'W': {1: 20},
-          'X': {1: 17,    | buy any 3 of (S,T,X,Y,Z) for 45},
-          'Y': {1: 20,    | buy any 3 of (S,T,X,Y,Z) for 45},
-          'Z': {1: 21,    | buy any 3 of (S,T,X,Y,Z) for 45}}
+          'X': {1: 17, 3: {'offer': 'buy_any_three',
+                           'over':  ['S', 'T', 'X', 'Y', 'Z'],
+                           'group_price': 45}},
+          'Y': {1: 20, 3: {'offer': 'buy_any_three',
+                           'over':  ['S', 'T', 'X', 'Y', 'Z'],
+                           'group_price': 45}},
+          'Z': {1: 21, 3: {'offer': 'buy_any_three',
+                           'over':  ['S', 'T', 'X', 'Y', 'Z'],
+                           'group_price': 45}}}
+
 
 # noinspection PyUnusedLocal
 # skus = unicode string
