@@ -12,8 +12,9 @@ prices = {'A': {1: 50, 3: 130, 5: 200},
           'D': {1: 15},
           'E': {1: 40, 2: {'offer': 'one_free',
                            'over': 'B'}},
-          'F': {1: 10, 2: {'one_free',
-                           'over': 'F'}}}
+          'F': {1: 10, 2: {'offer': 'one_free',
+                           'over': 'F'}}
+          }
 
 
 # noinspection PyUnusedLocal
@@ -35,20 +36,26 @@ def checkout(skus):
 
     for sku in sorted(ticket, reverse=True):
         for offer in sorted(prices[sku], reverse=True):
-            if prices[sku][offer] == 'one_free':
+            if type(prices[sku][offer]) == dict:
                 times = ticket[sku] / offer
                 total += times * offer * prices[sku][1]
                 ticket[sku] -= times * offer
                 
-                if sku == 'E' and ticket.get('B'):
-                    ticket['B'] -= times
-                    if ticket['B'] < 0:
-                        ticket['B'] = 0
+                offer_over = prices[sku][offer]['over']
+                if ticket.get(offer_over):
+                    ticket[offer_over] -= times
+                    if ticket[offer_over] < 0:
+                        ticket[offer_over] = 0
+
+                # if sku == 'E' and ticket.get('B'):
+                #     ticket['B'] -= times
+                #     if ticket['B'] < 0:
+                #         ticket['B'] = 0
                 
-                if sku == 'F' and ticket.get('F'):
-                    ticket['F'] -= times
-                    if ticket['F'] < 0:
-                        ticket['F'] = 0
+                # if sku == 'F' and ticket.get('F'):
+                #     ticket['F'] -= times
+                #     if ticket['F'] < 0:
+                #         ticket['F'] = 0
 
             else:
                 times = ticket[sku] / offer
