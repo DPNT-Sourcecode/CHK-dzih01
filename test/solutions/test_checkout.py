@@ -109,5 +109,15 @@ class TestCheckoutFullShop(unittest.TestCase):
     def test_checkout(self):
         assert checkout("RRRQ") == 150
 
+
+class TestCheckoutFullShop1(unittest.TestCase):
+    def test_checkout(self):
+        assert checkout("NNN") == 120
+
+
+class TestCheckoutFullShopFreeM(unittest.TestCase):
+    def test_checkout(self):
+        assert checkout("NNNM") == 120
+
 if __name__ == '__main__':
     unittest.main()
