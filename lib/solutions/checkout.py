@@ -61,14 +61,12 @@ def apply_group_offers(ticket):
     for sku in sorted(products, reverse=True): #group higher prices first
         print "=>" + sku
         if products[sku] >= times:
-            products[sku] -= times 
+            ticket[sku] -= times 
             times = 0
-            ticket[sku] = products[sku]
             break
         else:
-            products[sku] = 0
+            ticket[sku] = 0
             times -= products[sku]
-            ticket[sku] = products[sku]
             if times == 0:
                 break
 
