@@ -27,15 +27,15 @@ def checkout(skus):
     for sku in sorted(ticket, reverse=True):
         for offer in sorted(prices[sku], reverse=True):
             if type(prices[sku][offer]) == dict:
-                times = ticket[sku] / offer
-                total += times * offer * prices[sku][1]
-                ticket[sku] -= times * offer
-         
-                offer_over = prices[sku][offer]['over']
-                if ticket.get(offer_over):
-                    ticket[offer_over] -= times
-                    if ticket[offer_over] < 0:
-                        ticket[offer_over] = 0
+                while ticket[sku] >= offer:
+                    total += offer * prices[sku][1] 
+                    ticket[sku] -= offer
+                    
+                    offer_over = prices[sku][offer]['over']
+                    if ticket.get(offer_over):
+                        ticket[offer_over] -= offer
+                        if ticket[offer_over] < 0:
+                            ticket[offer_over] = 0
             else:
                 times = ticket[sku] / offer
                 total += times * prices[sku][offer]
