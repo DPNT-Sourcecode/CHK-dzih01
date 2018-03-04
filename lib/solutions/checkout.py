@@ -9,14 +9,14 @@ prices = {'A': {1: 50, 3: 130}
 # skus = unicode string
 def checkout(skus):
     ticket = {}
+    total = 0
 
     for sku in skus:
         ticket[sku] = ticket.get(sku, 0) + 1
 
-
-
-# | A    | 50    | 3A for 130     |
-# | B    | 30    | 2B for 45      |
-# | C    | 20    |                |
-# | D    | 15    |                |
-# +------+-------+----------------+
+    for sku in ticket:
+        for offer in sorted(prices[sku], reversed=True)
+            times = ticket[sku] / prices[sku]:
+            total += times * offer
+            ticket[sku] -= times * offer
+        else:    
