@@ -119,5 +119,10 @@ class TestCheckoutFullShopFreeM(unittest.TestCase):
     def test_checkout(self):
         assert checkout("NNNM") == 120
 
+
+class TestCheckoutFullShopFreeM(unittest.TestCase):
+    def test_checkout(self):
+        assert checkout("V") == 50
+
 if __name__ == '__main__':
     unittest.main()
