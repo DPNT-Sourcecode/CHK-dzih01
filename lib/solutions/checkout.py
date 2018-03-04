@@ -6,6 +6,8 @@ prices = {'A': {1: 50, 3: 130, 5: 200},
           'E': {1: 40, 2: 0.5 * 40}}
 
 # noinspection PyUnusedLocal
+
+
 # skus = unicode string
 def checkout(skus):
     ticket = {}
