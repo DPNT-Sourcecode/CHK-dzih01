@@ -1,11 +1,3 @@
-
-# prices = {'A': {1: 50, 3: 130, 5: 200},
-#           'B': {1: 30, 2: 45},
-#           'C': {1: 20},
-#           'D': {1: 15},
-#           'E': {1: 40, 2: 'one_free'},
-#           'F': {1: 10, 2: 'one_free'}}
-
 prices = {'A': {1: 50, 3: 130, 5: 200},
           'B': {1: 30, 2: 45},
           'C': {1: 20},
@@ -18,8 +10,6 @@ prices = {'A': {1: 50, 3: 130, 5: 200},
 
 
 # noinspection PyUnusedLocal
-
-
 # skus = unicode string
 def checkout(skus):
     ticket = {}
@@ -40,23 +30,12 @@ def checkout(skus):
                 times = ticket[sku] / offer
                 total += times * offer * prices[sku][1]
                 ticket[sku] -= times * offer
-                
+         
                 offer_over = prices[sku][offer]['over']
                 if ticket.get(offer_over):
                     ticket[offer_over] -= times
                     if ticket[offer_over] < 0:
                         ticket[offer_over] = 0
-
-                # if sku == 'E' and ticket.get('B'):
-                #     ticket['B'] -= times
-                #     if ticket['B'] < 0:
-                #         ticket['B'] = 0
-                
-                # if sku == 'F' and ticket.get('F'):
-                #     ticket['F'] -= times
-                #     if ticket['F'] < 0:
-                #         ticket['F'] = 0
-
             else:
                 times = ticket[sku] / offer
                 total += times * prices[sku][offer]
