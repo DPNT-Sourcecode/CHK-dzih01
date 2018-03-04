@@ -75,6 +75,10 @@ PRICES = {'A': {1: 50, 3: 130, 5: 200},
                            'group_price': 45}}}
 
 
+def apply_group_offers(ticket):
+    pass
+
+
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
@@ -90,18 +94,24 @@ def checkout(skus):
         else:
             return -1
 
+    apply_group_offers(ticket)
+
     for sku in sorted(ticket, reverse=True):
         for offer in sorted(PRICES[sku], reverse=True):
             if type(PRICES[sku][offer]) == dict:
-                while ticket[sku] >= offer:
-                    total += offer * PRICES[sku][1]
-                    ticket[sku] -= offer
+                if PRICES[sku][offer]['offer'] == 'one_free':
+                    while ticket[sku] >= offer:
+                        total += offer * PRICES[sku][1]
+                        ticket[sku] -= offer
 
-                    offer_over = PRICES[sku][offer]['over']
-                    if ticket.get(offer_over):
-                        ticket[offer_over] -= 1
-                        if ticket[offer_over] < 0:
-                            ticket[offer_over] = 0
+                        offer_over = PRICES[sku][offer]['over']
+                        if ticket.get(offer_over):
+                            ticket[offer_over] -= 1
+                            if ticket[offer_over] < 0:
+                                ticket[offer_over] = 0
+
+                elif PRICES[sku][offer]['offer'] == 'buy_any_three':
+
             else:
                 times = ticket[sku] / offer
                 total += times * PRICES[sku][offer]
