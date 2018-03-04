@@ -53,6 +53,14 @@ def apply_group_offers(ticket):
             num_products += ticket[sku]
     
     times = num_products / 3
+    while times:
+        for sku in products:
+            if products[sku] >= times:
+                products[sku] -= times  
+                times = 0 
+            else:
+                products[sku] = 0
+                times -= products[sku] 
 
 
     
