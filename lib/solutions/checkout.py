@@ -46,6 +46,8 @@ GROUP_PRICE = 45
 
 
 def apply_group_offers(ticket):
+    print "Ticket:" + repr(ticket)
+
     products = {}
     num_products = 0
     total = 0
@@ -55,6 +57,10 @@ def apply_group_offers(ticket):
             num_products += ticket[sku]
     
     times = num_products / 3
+
+    print "products:" + repr(products) + " - " + str(num_products) + " - " + str(times)
+
+    
     while times:
         for sku in sorted(products, reverse=True): #group higher prices first
             if products[sku] >= times:
@@ -109,3 +115,7 @@ def checkout(skus):
                 ticket[sku] = 0
 
     return total
+
+
+if __name__ == "__main__":
+    print checkout("STX")
