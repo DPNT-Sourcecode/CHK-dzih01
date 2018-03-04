@@ -94,5 +94,16 @@ class TestCheckoutOfferF6(unittest.TestCase):
     def test_checkout(self):
         assert checkout("FFFFFF") == 40
 
+
+class TestCheckoutOfferLong(unittest.TestCase):
+    def test_checkout(self):
+        assert checkout("ABCDEFABCDEF") == 300
+
+
+class TestCheckoutOfferLong1(unittest.TestCase):
+    def test_checkout(self):
+        assert checkout("CDFFAECBDEAB") == 300
+
+
 if __name__ == '__main__':
     unittest.main()

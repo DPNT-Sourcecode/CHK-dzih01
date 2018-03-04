@@ -28,12 +28,12 @@ def checkout(skus):
         for offer in sorted(prices[sku], reverse=True):
             if type(prices[sku][offer]) == dict:
                 while ticket[sku] >= offer:
-                    total += offer * prices[sku][1] 
+                    total += offer * prices[sku][1]
                     ticket[sku] -= offer
-                    
+
                     offer_over = prices[sku][offer]['over']
                     if ticket.get(offer_over):
-                        ticket[offer_over] -= offer
+                        ticket[offer_over] -= 1
                         if ticket[offer_over] < 0:
                             ticket[offer_over] = 0
             else:
